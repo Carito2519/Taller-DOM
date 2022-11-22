@@ -2,19 +2,19 @@ const tituloEspecial = document.querySelector('#especial');
 const templateProducto = document.querySelector('#template-producto');
 const contenedorProductos = document.querySelector('.contenedor-productos');
 
-let apiPropio = {}
+const apiPropio = {};
 
 function obtenerProductos() {
     fetch('https://api.escuelajs.co/api/v1/products')
         .then(respuesta => respuesta.json())
         .then(datos => {
-            apiPropio = datos.filter((_, index) => index < 10);
+            apiPropio.productos = datos.filter((_, index) => index < 10);
             recargarProductos();
         });
 }
 
 function recargarProductos() {
-    apiPropio.forEach(producto => {
+    apiPropio.productos.forEach(producto => {
         const nuevoProducto = templateProducto.content.cloneNode(true);
         nuevoProducto.querySelector('.titulo').textContent = producto.title;
         nuevoProducto.querySelector('.precio').textContent = producto.price;
