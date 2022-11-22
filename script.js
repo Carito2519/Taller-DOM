@@ -2,7 +2,7 @@ const tituloEspecial = document.querySelector('#especial');
 const templateProducto = document.querySelector('#template-producto');
 const contenedorProductos = document.querySelector('.contenedor-productos');
 
-const apiPropio = {}
+let apiPropio = {}
 
 function obtenerProductos() {
     fetch('https://api.escuelajs.co/api/v1/products')
