@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;600;700&display=swap');
 
+
 html {
     font-family: 'Raleway', sans-serif;
     display: block;
@@ -24,18 +25,23 @@ h2 {
     flex-wrap: wrap;
 }
 
-.producto {
+.producto,
+.carrito {
     background-color: hsla(186, 100%, 37%, 0.2);
     width: 400px;
     padding: 10px;
     margin: 10px;
 }
 
-.producto .titulo {
+.producto .titulo,
+.carrito .titulo {
     text-align: center;
 }
 
-.producto .contenedor-precio {
+.producto .contenedor-precio,
+.carrito .contenedor-precio,
+.carrito .contenedor-cantidad,
+.carrito .contenedor-total {
     text-align: center;
 }
 
@@ -43,6 +49,7 @@ h2 {
     font-weight: bold;
 }
 
-.producto .imagen {
+.producto .imagen,
+.carrito .imagen {
     width: 200px;
 }
