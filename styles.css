@@ -11,16 +11,18 @@ body {
 }
 
 h1 {
-    color: blue;
+    color: chocolate;
     text-align: center;
+    font-size: 70px;
 }
 
 h2 {
-    color: red;
+    color: chocolate;
     font-size: 60px;
 }
 
-.contenedor-productos {
+.contenedor-productos,
+.contenedor-carrito {
     display: flex;
     flex-wrap: wrap;
 }
@@ -45,7 +47,10 @@ h2 {
     text-align: center;
 }
 
-.producto .precio {
+.producto .precio,
+.carrito .precio,
+.carrito .cantidad,
+.carrito .total {
     font-weight: bold;
 }
 
