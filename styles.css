@@ -27,6 +27,10 @@ h2 {
     flex-wrap: wrap;
 }
 
+.contenedor-inputs {
+    margin-top: 5px;
+}
+
 .producto,
 .carrito {
     background-color: hsla(186, 100%, 37%, 0.2);

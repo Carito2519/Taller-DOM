@@ -3,6 +3,23 @@ const templateProducto = document.querySelector('#template-producto');
 const templateCarrito = document.querySelector('#template-carrito');
 const contenedorProductos = document.querySelector('.contenedor-productos');
 const contenedorCarrito = document.querySelector('.contenedor-carrito');
+const crearProductoBoton = document.querySelector('.crear-btn');
+
+crearProductoBoton.addEventListener('click', () => {
+    const nuevoTitulo = document.querySelector('#titulo-input').value;
+    const nuevoPrecio = document.querySelector('#precio-input').value;
+    const nuevaImagen = document.querySelector('#imagen-input').value;
+
+    const nuevoProducto = {
+        id: Math.floor(Math.random() * 1000000),
+        title: nuevoTitulo,
+        price: nuevoPrecio,
+        image: nuevaImagen,
+    };
+
+    apiPropio.productos.push(nuevoProducto);
+    recargarProductos();
+});
 
 const apiPropio = { productos: [], carrito: [] };
 
@@ -11,7 +28,6 @@ function obtenerProductos() {
         .then(respuesta => respuesta.json())
         .then(datos => {
             apiPropio.productos = datos.filter((_, index) => index < 10);
-            console.log(apiPropio.productos);
             recargarProductos();
         });
 }
